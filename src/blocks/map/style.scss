@@ -1,0 +1,50 @@
+.map {
+    position: relative;
+    margin-bottom: 50px;
+    @include mq('tablet') {
+        margin-bottom: 0;
+    }
+
+    &__container {
+        height: 401px;
+
+        @include mq('tablet') {
+            height: 462px;
+        }
+
+        @include mq('laptop') {
+            height: 508px;
+        }
+    }
+}
+
+.loader {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .5;
+
+    .icon {
+        fill: red;
+        font-size: 80px;
+        animation: 2s opacityAnimation infinite;
+    }
+    
+    &.is-active {
+        display: block;
+    }
+}
+
+@keyframes opacityAnimation {
+    0% {
+        transform: rotate(0);
+        transition: .3s ease;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        transition: .3s ease;
+    }
+}

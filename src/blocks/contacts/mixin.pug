@@ -1,0 +1,14 @@
+include ../../blocks/map/mixin
+mixin contacts()
+    section.contacts(id="contacts")
+        .container.contacts__container
+            .contacts-card
+                h2.contacts-card__title Контакты
+                .contacts-card__contnent
+                    a.contacts-card__phone(href="tel:+79884870701") +7 (988) 487-07-01
+                    .contacts-card__address Краснодар, ул. Селезнева 4/4, корпус 2, офис 27
+                    .contacts-card__timetable Ежедневно с 9:00 до 19:00.
+                    a.contacts-card__email(href="mailto:yugstr@yandex.ru") yugstr@yandex.ru
+                button.btn.btn--red.mobile-hide.modal-trigger(type="button" data-modal='feedback-modal') Вызвать замерщика бесплатно
+            +map()
+            button.btn.btn--red.desktop-hide.modal-trigger(type="button" data-modal='feedback-modal') Вызвать замерщика бесплатно

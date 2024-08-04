@@ -1,0 +1,68 @@
+.contacts {
+  &__container {
+    position: relative;
+  }
+}
+.contacts-card {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 30px 12px;
+  background-color: #fff;
+  color: #292929;
+  z-index: 1;
+  @include mq("tablet") {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    padding: 48px;
+  }
+  &__contnent {
+    margin-bottom: 30px;
+  }
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: $grey;
+    margin: 0 0 20px;
+    @include mq("tablet") {
+      font-size: 44px;
+    }
+  }
+
+  &__phone {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: inherit;
+    margin-bottom: 26px;
+    @include mq("tablet") {
+      font-size: 26px;
+    }
+  }
+
+  &__address {
+    font-size: 16px;
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+  }
+
+  &__timetable {
+    font-size: 16px;
+    opacity: .7;
+    margin-bottom: 27px;
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+  }
+
+  &__email {
+    display: inline-block;
+    font-size: 16px;
+    color: inherit;
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+  }
+}

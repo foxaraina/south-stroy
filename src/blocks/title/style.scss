@@ -1,0 +1,46 @@
+.title-row {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  @include mq("tablet") {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+  &__caption {
+    font-size: 28px;
+    font-weight: 600;
+    color: $grey;
+    margin: 0;
+    flex-grow: 1;
+    @include mq('laptop') {
+      font-size: 44px;
+    }
+  }
+
+  &__lead {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #292929;
+    padding-left: 18px;
+    position: relative;
+    max-width: 670px;
+    margin-top: 30px;
+    @include mq("tablet") {
+      font-size: 20px;
+      margin-top: 0;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: $primary-color;
+    }
+
+
+  }
+}

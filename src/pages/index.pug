@@ -1,0 +1,40 @@
+extends ../template/layout
+include ../blocks/title/mixin
+include ../blocks/portfolio-item/mixin
+include ../blocks/contacts/mixin
+include ../blocks/team/mixin
+include ../blocks/testimonials/mixin
+include ../blocks/articles/mixin
+include ../blocks/stock/mixin
+include ../blocks/quiz/mixin
+include ../blocks/first-screen/mixin
+include ../blocks/price/mixin
+include ../blocks/features/mixin
+block variables
+    -
+        var title = 'Юг строй'
+
+block styles
+
+block content
+    +first-screen()
+    +features()
+    section.portfolio(id="portfolio")
+        .container
+            +title("Примеры готовых работ")
+            .portfolio-list
+                +portfolio-item("Крузенштерна, 6/3", 0, true)
+                +portfolio-item("ЖК «Элегант»", 1)
+                +portfolio-item("ЖК «Аквамарин»", 2, true)
+                +portfolio-item("Крузенштерна, 6/3", 3, true)
+                +portfolio-item("ЖК «Петр 1»", 4, true)
+                +portfolio-item("ЖК «Центр города»", 5, true)
+            .show-more
+                button.btn.btn--wide.btn--white(type="button") Показать больше проектов
+    +price()
+    +quiz()
+    +stock()
+    +articles()
+    +testimonials()
+    +team()
+    +contacts()

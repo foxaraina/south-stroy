@@ -1,0 +1,8 @@
+mixin srcsetRetinaImg(src, ext, width, height, placeholder, classes)
+    img.lazyload(src=src + '.' + ext data-src=src + '.' + ext  width=width height=height alt='image')
+
+mixin srcsetImg(src, ext, width, height, placeholder, classes)
+    picture(class=classes)
+        source(data-srcset=src + '.' + "webp" type="image/webp")
+        source(data-srcset=src + '.' + ext type="image/" + ext)
+        img.lazyload(data-src=src + '.' + ext   width=width height=height alt='image')

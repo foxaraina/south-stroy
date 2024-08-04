@@ -1,0 +1,26 @@
+mixin input(data)
+    .form-group(class=data.groupClasses)
+        if data.label
+            label(for=data.id)
+                =data.label
+                span.error-text !{data.errorText ?  data.errorText : 'Поле обязательно для заполнения'}
+
+        input(type=data.type name=data.name id=data.id value=data.value placeholder=data.placeholder class=data.classes disabled=data.disabled)
+        if data.error && !data.label
+            .form-group__error Поле обязвтельно для заполнения
+        if data.hit
+            .form-group__hit= data.hit
+
+mixin textarea(data)
+    .form-group(class=data.groupClasses)
+        textarea(name=data.name id=data.id placeholder=data.placeholder class=data.classes)
+        if data.label
+            label(for=data.id)=data.label
+        if data.error
+        .form-group__error Поле обязвтельно для заполнения
+
+mixin allow-checkbox(name, id, classes)
+    .allow-checkbox(class=classes)
+        input(type='checkbox' name=name id=id checked required)
+        label(for=id) #[a(href='#' target='_blank') Согласие] на обработку персональных данных
+

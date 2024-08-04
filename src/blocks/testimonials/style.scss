@@ -1,0 +1,129 @@
+.testimonials {
+  margin-bottom: 90px;
+  @include mq("tablet") {
+    margin-bottom: 130px;
+  }
+  .swiper-controller {
+    display: none;
+    @include mq("phone") {
+      display: flex;
+    }
+  }
+  .swiper-wrapper {
+    flex-direction: column;
+    @include mq("phone") {
+      flex-direction: row;
+    }
+  }
+  .swiper-slide {
+    margin-bottom: 20px;
+    transition: .3s ease;
+    &:not(:first-child) {
+      display: none;
+      @include mq("phone") {
+        display: flex;
+      }
+    }
+  }
+}
+.testimonials-slider {
+  position: relative;
+  .swiper-controller {
+    position: absolute;
+    left: 48px;
+    bottom: 48px;
+    z-index: 1;
+  }
+  .swiper-counter {
+    margin: 0 40px;
+  }
+}
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 30px 12px;
+  @include mq("phone") {
+    flex-direction: row;
+  }
+  @include mq("tablet") {
+    padding: 48px;
+  }
+  &__meta {
+    flex-grow: 1;
+  }
+  &__info {
+    max-width: 300px;
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    @include mq("tablet") {
+      margin-bottom: 22px;
+    }
+    &-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+      flex-shrink: 0;
+      @include mq("tablet") {
+        margin-right: 30px;
+      }
+    }
+    &-name {
+      font-size: 18px;
+      font-weight: 500;
+      @include mq("tablet") {
+        font-size: 20px;
+      }
+    }
+  }
+  &__object {
+    font-size: 16px;
+    opacity: .7;
+    margin-bottom: 14px;
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    img {
+      width: 153px;
+    }
+  }
+  &__stars {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    .icon {
+      font-size: 22px;
+      fill: #FFCC00;
+    }
+  }
+  &__content {
+    display: flex;
+    position: relative;
+    &-text {
+      @include mq("phone") {
+        margin-left: 70px;
+      }
+    }
+    p {
+      max-width: 630px;
+    }
+    .icon {
+      display: none;
+      @include mq("phone") {
+        fill: $primary-color;
+        opacity: .07;
+        font-size: 100px;
+      }
+    }
+  }
+}

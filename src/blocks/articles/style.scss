@@ -1,0 +1,26 @@
+.articles {
+  position: relative;
+  margin-bottom: 90px;
+  @include mq("tablet") {
+    margin-bottom: 130px;
+  }
+}
+
+.article {
+  position: relative;
+  .btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include mq("tablet") {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

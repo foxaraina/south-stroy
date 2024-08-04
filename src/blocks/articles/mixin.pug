@@ -1,0 +1,23 @@
+mixin articles()
+    section.articles(id="articles")
+        .container
+            +title("СМИ о нас", "Мы открыто заявляем о качестве своих услуг")
+            .articles-list.js-article-gallery
+                a.article(
+                    href="https://youtu.be/ef5s2KxPiEQ?si=TR31QBwW0f3nK4Rl"
+                    data-fancybox="arcticles"
+                    )
+                    +srcsetImg('img/article-1', 'jpg', 446, 260)
+                    .btn-play
+                a.article(
+                    href="https://youtu.be/ef5s2KxPiEQ?si=TR31QBwW0f3nK4Rl"
+                    data-fancybox="arcticles"
+                )
+                    +srcsetImg('img/article-2', 'jpg', 446, 260)
+                    .btn-play
+                a.article(
+                    href="https://youtu.be/ef5s2KxPiEQ?si=TR31QBwW0f3nK4Rl"
+                    data-fancybox="arcticles"
+                    )
+                    +srcsetImg('img/article-3', 'jpg', 446, 260)
+                    .btn-play

@@ -1,0 +1,26 @@
+mixin modal(id, data, className)
+    .modal.effect(id=id)
+        .modal__container
+            .modal__inner
+                button.modal__close.js-modal-close(type='button')
+                    +icon('close')
+                .modal__body
+                    if data.header
+                        +modal-header()
+                    if data.form
+                        +modal-form()
+
+mixin modal-header()
+    .modal__header
+        .modal__title Оставьте, пожалуйста, свой номер и наш менеджер вам перезвонит
+
+mixin modal-form()
+    form.modal__form.js-form(action='/')
+        .form-group-row
+            .form-group
+                input(type="tel" name="phone" placeholder="+7")
+            .form-group-submit
+                button.btn.btn--red(type='submit') Отправить
+        .form-policy
+            input(type="checkbox" checked name="private-policy" id="private-policy")
+            label(for="private-policy") Соглашаюсь #[a(href="#") Политикой конфиденциальности] и даю согласие на обработку персональных данных

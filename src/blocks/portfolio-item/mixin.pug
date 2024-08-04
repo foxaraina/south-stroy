@@ -1,0 +1,44 @@
+mixin portfolio-item(name, start, video)
+    -
+        var images = [ 'img/portfolio-1.jpg', 'img/portfolio-2.jpg', 'img/portfolio-3.jpg', 'img/portfolio-4.jpg', 'img/portfolio-5.jpg', 'img/portfolio-6.jpg']
+    .portfolio-item.lightgallery
+        .portfolio-slider.swiper.js-portfolio-slider
+            .swiper-wrapper
+                - var count = 0
+                - for (var i = 0; i < 9; i++)
+                    .swiper-slide
+                        .portfolio-item__image
+                            if i + start >= images.length
+                                a(href="/" + images[count] data-fancybox="gallery-portfolio" + start)
+                                    img(src= images[count] loading="lazy" alt="image")
+                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                if count >= 5
+                                    - count = 0
+                                else
+                                    - count++
+                            else
+                                if i === 0 && video
+                                    a(href="/video/video.mp4" data-fancybox="gallery-portfolio" + start)
+                                        .btn-play
+                                            span.play-icon
+                                        img(src= images[i + start] loading="lazy")
+                                        .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                else
+                                    a(href="/" + images[i + start] data-fancybox="gallery-portfolio" + start)
+                                        img(src= images[i + start] loading="lazy")
+                                        .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+            .swiper-pagination
+        .portfolio-item__content
+            .swiper-controller
+                button.swiper-button-prev(type="button")
+                    +icon("arrow-right")
+                .swiper-counter
+                button.swiper-button-next(type="button")
+                    +icon("arrow-right")
+            .portfolio-item__name= name
+            .portfolio-item__footer
+                .portfolio-item__meta
+                    span 69 м2,
+                    span 50 дней
+                button.btn.btn--light-red.modal-trigger(type="button" data-modal="feedback-modal") Хочу такой же ремонт

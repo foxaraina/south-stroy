@@ -1,0 +1,77 @@
+.price {
+  padding: 90px 0;
+  @include mq("tablet") {
+    padding: 130px 0;
+  }
+  &__block {
+    display: flex;
+    flex-direction: column;
+    @include mq("tablet") {
+      flex-direction: row;
+    }
+    &-description {
+      flex-grow: 1;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mq("tablet") {
+      width: 50%;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: $grey;
+      margin: 0 0 30px;
+      @include mq("tablet") {
+        font-size: 44px;
+        margin: 0 0 40px;
+        max-width: 520px;
+      }
+    }
+
+    p {
+      max-width: 520px;
+      flex-grow: 1;
+    }
+    .btn {
+      width: 100%;
+      @include mq("tablet") {
+        width: fit-content;
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    margin: 50px 0;
+    @include mq("tablet") {
+      margin: 0;
+    }
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 20px 15px;
+      font-size: 16px;
+      font-weight: 500;
+      &:nth-child(even) {
+        background-color: $grey-md;
+      }
+      @include mq("tablet") {
+        font-size: 18px;
+        padding: 32px 48px;
+      }
+    }
+    &-cell {
+      display: inline-block;
+      &:first-child {
+        margin-right: 12px;
+      }
+    }
+  }
+}

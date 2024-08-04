@@ -1,0 +1,52 @@
+mixin testionialItem(text)
+    .swiper-slide.testimonial
+        .testimonial__meta
+            .testimonial__info
+                .testimonial__author
+                    .testimonial__author-avatar
+                        +srcsetRetinaImg('img/avatar', 'jpg', 72, 72)
+                    .testimonial__author-name Кирилл Шаталов
+                .testimonial__object Комплексный ремонт квартиры по индивидуальному проекту
+                .testimonial__rating
+                    .testimonial__stars
+                        +icon("star")
+                        +icon("star")
+                        +icon("star")
+                        +icon("star")
+                        +icon("star")
+                    .testimonial__ya
+                        +srcsetRetinaImg('img/yandex', 'jpg')
+        .testimonial__content
+            +icon("quotes")
+            .testimonial__content-text
+                p.
+                    Хотел бы выразить благодарность строительной компании "Юг-Строй" в лице её
+                    руководителя и сотрудников из бригад за отлично выполненные работы по комплексному ремонту
+                    "под ключ" нашей квартиры. Информацию о данной организации нашел в интернете и, безусловно,
+                    вначале были определённые опасения. Но после личной встречи с Павлом (руководитель)
+                    на объекте все встало на свои места и сомнения отпали.
+                p.
+                    Внимание к деталям, прозрачное ценообразование, советы и рекомендации по ходу
+                    выполнения строительных работ, учёт всех наших пожеланий, чистота на объекте,
+                    выполнение требований по шумным работам, а главное, соблюдение сроков ремонта,
+                    обозначенных в договоре, и гарантия на все выполненные работы, - это все про этих ребят.
+                    Договор был заключён во второй половине ноября и уже 23 февраля мы въехали в свою квартиру.
+                    Никаких сложностей и "сюрпризов", как заказчики, мы не испытали, ни до, ни во время, ни уже после ремонта.
+                    Спасибо за то, что воплотили наш ремонт в реальность!
+mixin testimonials()
+    section.testimonials(id="testimonials")
+        .container
+            +title("Отзывы наших заказчиков")
+            .testimonials-slider.swiper.js-testimonials-slider
+                .swiper-wrapper
+                    - for(var i = 0; i < 9; i++)
+                        +testionialItem(i)
+                .swiper-controller
+                    button.swiper-button-prev(type="button")
+                        +icon("arrow-right")
+                    .swiper-counter
+                    button.swiper-button-next(type="button")
+                        +icon("arrow-right")
+            .show-more
+                button.btn.btn--white.btn--wide.desktop-hide.js-show-more-testimonials(type="button") Показать больше отзывов
+

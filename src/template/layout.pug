@@ -1,0 +1,68 @@
+include ./mixins/icon
+include ./mixins/buttons
+include ./mixins/text-fields
+include ./mixins/images
+include ../blocks/header/mixin
+include ../blocks/footer/mixin
+include ../blocks/modal/mixin
+
+doctype html
+html(lang='ru')
+    -
+        var title = 'СОТ'
+    -
+        var fieldName = {type: 'text', placeholder: 'Введите ваше имя', label: 'Ваше имя', id: 'name'}
+    -
+        var fieldPhone = {type: 'tel', label: 'Ваш телефон', id: 'phone', placeholder: '+7 (___) __-__-__'}
+    -
+        var fieldMessage = {
+            textarea: true,
+            placeholder: 'Введите свое сообщение',
+            label: 'Ваше сообщение',
+            id: 'company'
+        }
+
+    block variables
+
+    head
+        title= title || 'СОТ'
+
+        meta(charset='utf-8')
+        meta(name='theme-color' content='#000')
+        meta(name='description' content=description || '')
+        meta(http-equiv='x-ua-compatible' content='ie=edge')
+        meta(name='format-detection' content='telephone=no')
+        meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+        meta(property="og:title" content="Юг строй")
+        meta(property="og:description" content="Юг строй")
+        meta(property="og:image" content="/img/og-image.jpg")
+        meta(property="og:type" content="profile")
+        meta(property="og:url" content= "/test")
+        link(rel='shortcut icon' type='image/x-icon' href='img/favicon.ico')
+        link(as='script' href='js/main.js' rel='preload')
+        link(rel='stylesheet' href='css/main.css')
+
+        block styles
+
+    body
+        .page
+
+            +header()
+            main.main
+                block content
+            +footer()
+            block modals
+            +modal('feedback-modal',
+                {
+                    header:
+                        {
+                            title: 'Обратный звонок',
+                            desc: 'Заполните заявку на обратный звонок прямо сейчас и мы постараемся перезвонить Вам в кратчайшее время.'
+                        },
+                    form: {
+                        fields: [fieldName, fieldPhone, fieldMessage],
+                        submitText: 'Отправить сообщение'
+                    }
+                })
+            .modal__overlay
+        script(src='js/main.js')

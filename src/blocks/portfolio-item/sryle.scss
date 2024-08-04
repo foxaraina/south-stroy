@@ -1,0 +1,86 @@
+.portfolio-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+  @include mq("laptop") {
+    gap: 20px;
+  }
+}
+
+.portfolio-item {
+  width: 100%;
+  max-width: 447px;
+  @include mq("tablet") {
+    width: calc((100% / 3) - 14px);
+  }
+  &__image {
+    position: relative;
+    max-height: 328px;
+    overflow: hidden;
+    @include mq("tablet") {
+      max-height: 100%;
+    }
+    .btn-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__content {
+    background-color: #fff;
+    padding: 20px 12px 12px;
+    @include mq("tablet") {
+      padding: 16px 20px 20px;
+    }
+  }
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+  &__footer {
+    display: flex;
+    .btn {
+      padding: 10px 20px;
+    }
+  }
+  &__meta {
+    font-size: 16px;
+    opacity: .7;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+  }
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    bottom: 12px;
+    @include mq("tablet") {
+      bottom: 20px;
+      gap: 6px;
+    }
+    &-bullet {
+      width: 30px;
+      height: 7px;
+      background-color: #fff;
+      opacity: .3;
+      border-radius: 4px;
+      margin: 0 !important;
+      @include mq("laptop") {
+        width: 36px;
+      }
+      &.swiper-pagination-bullet-active, &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

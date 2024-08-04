@@ -1,0 +1,120 @@
+.first-screen {
+  position: relative;
+  height: calc(100vh - 90px);
+  min-height: 518px;
+  padding: 34px 0 42px;
+  @include mq('tablet') {
+    height: calc(100vh - 90px);
+    padding: 70px 0 100px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, .4);
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  h1 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.2;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    @include mq('tablet') {
+      font-size: 70px;
+    }
+  }
+  &__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-direction: column-reverse;
+    .btn {
+      width: 100%;
+      @include mq('tablet') {
+        width: auto;
+      }
+    }
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+  }
+  &__badge {
+    position: absolute;
+    top: calc(100% + 20px);
+    right: 0;
+    width: 110px;
+    height: 110px;
+    transform: rotate(15.82deg);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 21px;
+    text-align: center;
+    @include mq('tablet') {
+      width: 190px;
+      height: 190px;
+      top: 100%;
+    }
+    svg {
+      font-size: 110px;
+      @include mq('tablet') {
+        font-size: 190px;
+      }
+    }
+    &-text {
+      color: #fff;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .sm {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1;
+        @include mq('tablet') {
+          font-size: 20px;
+        }
+      }
+      .big {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 104%;
+        @include mq('tablet') {
+          font-size: 35px;
+        }
+      }
+    }
+
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

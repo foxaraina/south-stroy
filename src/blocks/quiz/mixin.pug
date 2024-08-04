@@ -1,0 +1,158 @@
+mixin quiz()
+    section.quiz
+        .container
+            .quiz__container
+                h2.quiz__title Рассчитать ремонт
+                form.js-form(action="/" method="POST")
+                    .quiz__body
+                        .quiz__question.active(id="question-1")
+                            .quiz__question-title Где нужно сделать ремонт?
+                            .quiz__question-answers
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question1" id="question-1-answer-1" value="question-1-answer-1")
+                                    label(for="question-1-answer-1")
+                                        +srcsetImg('img/quiz-1-1', 'jpg', 190, 190)
+                                        span Новостройка
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question1" id="question-1-answer-2" value="question-1-answer-2")
+                                    label(for="question-1-answer-2")
+                                        +srcsetImg('img/quiz-1-2', 'jpg', 190, 190)
+                                        span Современный дом
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question1" id="question-1-answer-3" value="question-1-answer-3")
+                                    label(for="question-1-answer-3")
+                                        +srcsetImg('img/quiz-1-3', 'jpg', 190, 190)
+                                        span Старый дом
+
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question1" id="question-1-answer-4" value="question-1-answer-4")
+                                    label(for="question-1-answer-4")
+                                        +srcsetImg('img/quiz-1-4', 'jpg', 190, 190)
+                                        span Частный дом или коттедж
+
+                            .quiz__question-deacription
+                                p.
+                                    Тип дома напрямую влияет на стоимость ремонта.
+                                    В новостройках стоимость ремонта как правило ниже, так как не нужно
+                                    учитывать стоимость демонтажа старой отделки. В новых домах в смету закладывается
+                                    помимо ремонтных работ демонтаж старой отделки. В старых домах в смете учитывается
+                                    больше материалов на черновую отделку из-за неровных стен и потолков.
+                        .quiz__question(id="question-2")
+                            .quiz__question-title В каком стиле должен быть ремонт?
+                            .quiz__question-answers
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question2" id="question-2-answer-1" value="question-2-answer-1")
+                                    label(for="question-2-answer-1")
+                                        +srcsetImg('img/quiz-2-1', 'jpg', 190, 190)
+                                        span Классический
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question2" id="question-2-answer-2" value="question-2-answer-2")
+                                    label(for="question-2-answer-2")
+                                        +srcsetImg('img/quiz-2-2', 'jpg', 190, 190)
+                                        span Хайтек
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question2" id="question-2-answer-3" value="question-2-answer-3")
+                                    label(for="question-2-answer-3")
+                                        +srcsetImg('img/quiz-2-3', 'jpg', 190, 190)
+                                        span Арт-деко
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question2" id="question-2-answer-4" value="question-2-answer-4")
+                                    label(for="question-2-answer-4")
+                                        +srcsetImg('img/quiz-2-4', 'jpg', 190, 190)
+                                        span Модерн
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question2" id="question-2-answer-5" value="question-2-answer-5")
+                                    label(for="question-2-answer-5")
+                                        +srcsetImg('img/quiz-2-5', 'jpg', 190, 190)
+                                        span Лофт
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question2" id="question-2-answer-6" value="question-2-answer-6")
+                                    label(for="question-2-answer-6")
+                                        span.square
+                                        span Не определился
+                            .quiz__question-deacription
+                                p.
+                                    В целом, стилистика ремонта не самым прямым образом влияет на его стоимость,
+                                    однако лофт как правило дешевле, чем хайтек, а материалы, используемые
+                                    в отделке в стиле арт-деко дороже,
+                                    чем в классическом стиле.
+                                p.
+                                    Поэтому, если вы на этом шаге укажете желаемый стиль, смета получится более точной.
+                        .quiz__question(id="question-3")
+                            .quiz__question-title Есть ли у вас дизайн проект?
+                            .quiz__question-answers
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question3" id="question-3-answer-1" value="question-3-answer-1")
+                                    label(for="question-3-answer-1")
+                                        +srcsetImg('img/quiz-3-1', 'jpg', 190, 190)
+                                        span Да
+                                .quiz__question-answer
+                                    input.js-quiz-control(type="radio" name="question3" id="question-3-answer-2" value="question-3-answer-2")
+                                    span.square
+                                    span Нет
+                            .quiz__question-deacription
+                                p.
+                                    Если у вас есть дизайн-проект, мы сможем максимально точно посчитать стоимость ремонта.
+                                    Если его ещё нет, мы отдельно сделаем его расчёт для вас.
+                                    При некоторых условиях, это даже может быть бесплатно!
+                        .quiz__question(id="question-4")
+                            .quiz__question-title Нужны ли вам помощь с комплектацией квартиры?
+                            .quiz__question-answers
+                                .quiz__question-answer
+                                    input(type="checkbox" name="question4" id="question-4-answer-1" value="question-4-answer-1")
+                                    label(for="question-4-answer-1")
+                                        +srcsetImg('img/quiz-4-1', 'jpg', 190, 190)
+                                        span Окна
+                                .quiz__question-answer
+                                    input(type="checkbox" name="question4" id="question-4-answer-2" value="question-4-answer-2")
+                                    label(for="question-4-answer-2")
+                                        +srcsetImg('img/quiz-4-2', 'jpg', 190, 190)
+                                        span Двери
+                                .quiz__question-answer
+                                    input(type="checkbox" name="question4" id="question-4-answer-3" value="question-4-answer-3")
+                                    label(for="question-4-answer-3")
+                                        +srcsetImg('img/quiz-4-3', 'jpg', 190, 190)
+                                        span Сантехника
+                                .quiz__question-answer
+                                    input(type="checkbox" name="question4" id="question-4-answer-4" value="question-4-answer-4")
+                                    label(for="question-4-answer-4")
+                                        +srcsetImg('img/quiz-4-4', 'jpg', 190, 190)
+                                        span Кухня
+                                .quiz__question-answer
+                                    input(type="checkbox" name="question4" id="question-4-answer-5" value="question-4-answer-5")
+                                    label(for="question-4-answer-5")
+                                        +srcsetImg('img/quiz-4-5', 'jpg', 190, 190)
+                                        span Мебель
+                                .quiz__question-answer
+                                    input(type="checkbox" name="question4" id="question-4-answer-6" value="question-4-answer-6")
+                                    label(for="question-4-answer-6")
+                                        +srcsetImg('img/quiz-4-6', 'jpg', 190, 190)
+                                        span Кондиционеры
+                            .quiz__question-deacription
+                                p.
+                                    В целом, стилистика ремонта не самым прямым образом влияет на его стоимость,
+                                    однако лофт как правило дешевле, чем хайтек, а материалы, используемые
+                                    в отделке в стиле арт-деко дороже,
+                                    чем в классическом стиле.
+                                p.
+                                    Поэтому, если вы на этом шаге укажете желаемый стиль, смета получится более точной.
+                        .quiz__question(id="question-5")
+                            .quiz__question-title Спасибо за ответы!
+                            p.
+                                Ваша смета подготавливается нашим менеджером.
+                                В качестве бонуса мы дарим Вам #[b 5% скидку] от общей стоимости работ.
+                                Оставьте свой номер телефона и мы свяжемся с Вами в ближайшее время.
+                            .form-group
+                                input(type="tel" name="phone" placeholder="+7")
+                            .form-policy
+                                input(type="checkbox" checked name="private-policy" id="private-policy-quiz")
+                                label(for="private-policy-quiz") Соглашаюсь #[a(href="#") Политикой конфиденциальности] и даю согласие на обработку персональных данных
+                    .quiz__footer
+                        .quiz__progressbar
+                            .quiz__progressbar-step Шаг #[span.js-current-step 1] из 5
+                            .quiz__progressbar-line
+                                span.quiz__progressbar-line-thumb.js-progressbar
+                        .quiz__footer-btn
+                            button.btn.btn--light-red.js-prev-question(type="button") Назад
+                            button.btn.btn--red.js-next-question(type="button") Далее
+                            button.btn.btn--red.js-submit-quiz(type="submit" style="display: none") Отправить

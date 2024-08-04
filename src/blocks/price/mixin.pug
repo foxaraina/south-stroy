@@ -1,0 +1,31 @@
+mixin price()
+    section.price(id="price")
+        .container
+            .price__block
+                .price__col
+                    h2 Прозрачность цен - одно из наших правил
+                    .price__block-description
+                        p.
+                            Мы ведём ценовую политику, которая сделает хороший ремонт доступным для всех!
+                        p.
+                            Как бонус получите скидку #[b до 15%] на материалы,
+                            скидку #[b до 10%] на объём работ, а также возможность оформить #[b налоговый вычет.]
+                    button.btn.btn--red.mobile-hide.modal-trigger(type="button" data-modal='feedback-modal') Получить полный прайс
+                .price__col
+                    .price__table
+                        .price__table-row
+                            span.price__table-cell Ремонт "под ключ", м2
+                            span.price__table-cell от 5 500 ₽
+                        .price__table-row
+                            span.price__table-cell Поклейка обоев
+                            span.price__table-cell от  175 ₽
+                        .price__table-row
+                            span.price__table-cell Облицовка стен кафельной плиткой
+                            span.price__table-cell от 850 ₽
+                        .price__table-row
+                            span.price__table-cell Напольная плитка
+                            span.price__table-cell от 850 ₽
+                        .price__table-row
+                            span.price__table-cell Выравнивание пола
+                            span.price__table-cell от 250 ₽
+                    button.btn.btn--red.desktop-hide.modal-trigger(type="button" data-modal='feedback-modal') Получить полный прайс

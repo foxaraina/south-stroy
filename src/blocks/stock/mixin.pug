@@ -1,0 +1,22 @@
+mixin stock()
+    section.stock(id="stock")
+        .container.stock__container
+            .stock__left
+                h2.stock__title Акции июня
+                button.btn.btn--red.mobile-hide.modal-trigger(type="button" data-modal='feedback-modal') Хочу бонусную скидку
+            .stock__list
+                .stock-item
+                    .stock-item__image
+                        img.stock-item__img(src="img/stock-1.jpg" alt="stock")
+                    .stock-item__content
+                        .stock-item__title Кондиционер в подарок
+                        .stock-item__desc Каждому новому клиенту дарим сплит-систему.
+                        a(href="#").btn.btn--white Подробнее
+                .stock-item
+                    .stock-item__image
+                        img.stock-item__img(src="img/stock-2.jpg" alt="stock")
+                    .stock-item__content
+                        .stock-item__title Дарим дизайн-проект
+                        .stock-item__desc Закажите ремонт сейчас и получите дизайн-проект в подарок.
+                        a(href="#").btn.btn--white Подробнее
+            button.btn.btn--red.desktop-hide.modal-trigger(type="button" data-modal='feedback-modal') Хочу бонусную скидку

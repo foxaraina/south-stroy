@@ -1,0 +1,15 @@
+mixin first-screen()
+    section.first-screen
+        .first-screen__img
+            +srcsetImg('img/first-screen', 'jpg')
+
+        .container
+            h1 Делаем ремонт под ключ в Краснодаре
+                span.first-screen__badge
+                    +icon("badge")
+                    span.first-screen__badge-text
+                        span.sm гарантия
+                        span.big 5 лет
+            .first-screen__btns
+                button.btn.btn--red.modal-trigger(type="button" data-modal='feedback-modal') Рассчитать ремонт
+                button.btn.btn--white.btn--outline.modal-trigger(type="button" data-modal='feedback-modal') Смотреть проекты

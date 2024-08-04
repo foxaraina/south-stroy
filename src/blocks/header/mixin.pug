@@ -1,0 +1,40 @@
+mixin header(data)
+    header.header
+        .container.header__container
+            a.header__logo(href='/')
+                img(src="img/logo.svg" alt="logo")
+            nav.header__nav
+                a.header__nav-item.js-anchor(href="#portfolio") Портфолио
+                a.header__nav-item.js-anchor(href="#price") Цены
+                a.header__nav-item.js-anchor(href="#stock") Акции
+                a.header__nav-item.js-anchor(href="#articles") СМИ о нас
+                a.header__nav-item.js-anchor(href="#testimonials") Отзывы
+                a.header__nav-item.js-anchor(href="#team") Команда
+                a.header__nav-item.js-anchor(href="#contacts") Контакты
+            .header__contacts
+                .header__phone
+                    a.header__phone-link(href="tel:+79884870701")
+                        |+7 (988) 487-07-01
+                        +icon("phone")
+                    span.header__shedule Ежедневно, 9:00-19:00
+                button.header__btn.modal-trigger(type="button" data-modal='feedback-modal') Заказать звонок
+                .header__menu
+                    span.menu-icon
+                        span
+    .mobile-menu
+        .mobile-menu__logo
+            img(src="/img/logo.svg")
+        .mobile-menu__close
+            +icon("close")
+        .mobile-menu__nav.js-anchors
+            a.mobile-menu__nav-item.js-anchor(href="#portfolio") Портфолио
+            a.mobile-menu__nav-item.js-anchor(href="#price") Цены
+            a.mobile-menu__nav-item.js-anchor(href="#stock") Акции
+            a.mobile-menu__nav-item.js-anchor(href="#articles") СМИ о нас
+            a.mobile-menu__nav-item.js-anchor(href="#testimonials") Отзывы
+            a.mobile-menu__nav-item.js-anchor(href="#team") Команда
+            a.mobile-menu__nav-item.js-anchor(href="#contacts") Контакты
+        .mobile-menu__footer
+            a.mobile-menu__phone(href="tel:+79884870701") +7 (988) 487-07-01
+            span.mobile-menu__shedule Ежедневно, 9:00-19:00
+            button.btn.btn--red.btn--wide.mobile-menu__btn.modal-trigger(type="button" data-modal='feedback-modal') Заказать звонок

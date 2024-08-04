@@ -1,0 +1,20 @@
+mixin teamItem(img, name, position, expiriense)
+    .team-item.swiper-slide
+        +srcsetImg('img/' + img, 'jpg', 327, 327)
+        .team-item__name= name
+        .team-item__position= position
+        .team-item__expiriense= expiriense
+mixin team()
+    section.team(id="team")
+        .container
+            +title("Команда", "Сплоченный коллектив опытных специалистов, которые знают и любят своё дело")
+            .team-list.swiper.js-team-slider
+                .swiper-wrapper
+                    +teamItem("team-1", "Паилак Мазманян", "Генеральный директор", "12 лет в строительстве и ремонте")
+                    +teamItem("team-2", "Александр Хохрянов", "Главный прораб", "Опыт более 20-ти лет")
+                    +teamItem("team-3", "Елена Милосердова", "Менеджер отдела продаж", "Девиз: не количество, а качество!")
+                    +teamItem("team-4", "Иван Паршин", "Маркетолог", "Помогает вам узнать нас")
+                button.swiper-button-next(type="button")
+                    +icon("arrow-right")
+                button.swiper-button-prev(type="button")
+                    +icon("arrow-right")
